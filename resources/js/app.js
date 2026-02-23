@@ -4,11 +4,12 @@ import { createApp, h } from 'vue';
 import '../css/app.css';
 import { initializeTheme } from './composables/useAppearance';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
+import Layout from './layouts/Layout.vue'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => (title ? `${title} - ${appName}` : appName),
+    title: (title) => `RFID - Attendance Monitoring, Borrowing, and Inventory`,
     resolve: (name) => {
         const page = resolvePageComponent(
             `./pages/${name}.vue`,
@@ -18,7 +19,7 @@ createInertiaApp({
         // Set default layout for all pages
         page.then((module) => {
             if (module.default.layout === undefined) {
-                module.default.layout = Navbar;
+                module.default.layout = Layout;
             }
         });
                 
@@ -28,8 +29,8 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .component('Head', Head)
-            .component('Link', Link)
+            .component("Head", Head)
+            .component("Link", Link)
             .mount(el);
     },
     progress: {

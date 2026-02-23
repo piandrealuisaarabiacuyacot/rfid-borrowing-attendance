@@ -7,7 +7,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer components {
+    .text-secondary {
+        color: '#0084C7'
+    }
+}
+
 @theme inline {
+    --color-brand: #0084C7;
     --font-sans:
         Instrument Sans, ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
