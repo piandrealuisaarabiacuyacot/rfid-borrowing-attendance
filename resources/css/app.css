@@ -9,12 +9,19 @@
 
 @layer components {
     .text-secondary {
-        color: '#0084C7'
+        color: '#0084C7';
     }
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('../js/assets/font/Raleway/static/Raleway-Regular.ttf');
+}
+
 @theme inline {
-    --color-brand: #0084C7;
+    --color-brand: #0084c7;
+    --color-custom-gray: #868686;
+    --font-raleway: 'Raleway', sans-serif;
     --font-sans:
         Instrument Sans, ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',

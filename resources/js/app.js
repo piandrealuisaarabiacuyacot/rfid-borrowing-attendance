@@ -5,6 +5,8 @@ import '../css/app.css';
 import { initializeTheme } from './composables/useAppearance';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import Layout from './layouts/Layout.vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -32,6 +34,7 @@ createInertiaApp({
             .component("Head", Head)
             .component("Link", Link)
             .mount(el);
+        AOS.init()
     },
     progress: {
         color: '#4B5563',
