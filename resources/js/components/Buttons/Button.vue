@@ -1,9 +1,18 @@
 <template>
-    <Link :href="href" 
+    <a
+        :href="href"
         :style="{ width: customWidth }"
-        :class="['block text-center p-2 border-2 border-brand', isBlue ? 'bg-brand text-white' : 'text-brand']"> 
-        {{ label }} 
-    </Link>
+        :class="[
+            'block cursor-pointer border-2 border-brand p-2 text-center transition-all duration-300',
+            isBlue
+                ? 'bg-brand text-white'
+                : isWhite
+                  ? 'bg-white text-brand'
+                  : 'text-brand',
+        ]"
+    >
+        {{ label }}
+    </a>
 </template>
 
 <script setup>
@@ -13,15 +22,19 @@ const props = defineProps({
     },
     label: {
         type: String,
-        required: true
+        required: true,
     },
     isBlue: {
         type: Boolean,
-        default: false
+        default: false,
     },
     customWidth: {
         type: String,
-        default: '150px'
-    }
+        default: '150px',
+    },
+    isWhite: {
+        type: Boolean,
+        default: false,
+    },
 });
 </script>
