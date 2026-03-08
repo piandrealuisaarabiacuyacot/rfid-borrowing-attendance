@@ -101,6 +101,9 @@
             'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
             'Noto Color Emoji';
     }
+    .bg-azure-gradient {
+        background: linear-gradient(to bottom, #0071db, #0059ab);
+    }
 }
 
 :root {
@@ -182,5 +185,8 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+    html {
+        scroll-behavior: smooth;
     }
 }
